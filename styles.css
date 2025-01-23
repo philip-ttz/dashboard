@@ -254,3 +254,9 @@ svg{
         display: none;
     }
 }
+
+@media (max-height: 700px){
+    .sidebar div{
+        min-height: 30px;
+    }
+}
