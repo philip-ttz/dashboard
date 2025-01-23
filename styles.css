@@ -1,0 +1,252 @@
+body,
+html{
+  height: 100%;
+  margin: 0;
+}
+h3, h5, h1, h2, h4, h6, p{
+    margin: 0;
+}
+
+body{
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr 8fr;
+    height: 100vh;
+}
+
+.header{
+    grid-area: 1/2/2/3;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    padding: 20px;
+    gap: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.sidebar{
+    background-color: #007BFF;
+    grid-area: 1/1/3/2;
+    display: flex;
+    padding: 30px 40px;
+    gap: 5px;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+.sidebar *, .header *{
+    position: relative;
+}
+
+
+.main{
+    background-color: gray;
+    grid-area: 2/2/3/3;
+    display: grid;
+    padding: 20px;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    overflow-y: scroll;
+}
+
+.search{
+    background-color: white;
+    grid-area: 1/1/2/2;
+}
+.userInterface{
+    background-color: white;
+    grid-area: 2/1/3/2;
+}
+
+.sidebar div{
+    min-height: 50px;
+    min-width: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+h4{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+.projects{
+    grid-area: 1/1/3/2;
+}
+.announcements{
+    grid-area: 1/2/2/3;
+}
+.trending{
+    grid-area: 2/2/3/3;
+}
+
+.search{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    min-height: 70px;
+}
+.search1, .search2{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.search1{
+    flex: 1 1 70%;
+}
+svg{
+    height: 1.5em;
+    width: 1.5em;
+}
+.search1 input{
+    padding: 8px;
+    flex: 1 1 70%;
+    min-width: 200px;
+    max-width: 70%;
+    border: 1px solid #ccc;
+    border-radius: 9999px;
+}
+.profilePicture{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: blueviolet;
+}
+#bell, .profilePicture, .search2 h3{
+    justify-self: end;
+}
+
+.userInterface{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 20px;
+}
+.links{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+.rechts{
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+}
+.rechts button{
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 9999px;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+}
+
+.projects{
+    display: grid;
+    padding: 20px;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+.project{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+}
+.sharing{
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+.announcements, .trending{
+    padding: 20px;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: white;
+    gap: 20px;
+    border-radius: 10px;
+}
+.container div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#profile{
+    flex-direction: row;
+    gap: 20px;
+}
+.contacts{
+    display: flex;
+    gap: 10px;
+}
+
+@media (max-width: 1200px){
+    .sidebar{
+        display: none;
+    }
+    .header{
+        grid-area: 1/1/2/3;
+    }
+    .main{
+        grid-area: 2/1/3/3;
+    }
+}
+
+@media (max-width:850px){
+    .search1{
+        flex:1;
+    }
+}
+
+@media (max-width: 800px){
+    .main{
+        display: flex;
+        flex-direction: column;
+    }
+    .rechts{
+        gap: 20px;
+    }
+}
+
+@media (max-width: 650px){
+    .links{
+        display: none;
+    }
+    .userInterface{
+        justify-content: center;
+    }
+    .projects{
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px){
+    .search2 svg, .search2 h3{
+        display: none;
+    }
+}
+
+@media (max-width: 400px){
+    .search1 svg{
+        display: none;
+    }
+}
